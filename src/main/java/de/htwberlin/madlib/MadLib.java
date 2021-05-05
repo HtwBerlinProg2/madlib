@@ -1,5 +1,10 @@
 package de.htwberlin.madlib;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
+
 public class MadLib {
 
   static final String[] ADJECTIVES = new String[]{"amazing", "exciting", "excellent", "emotional", "easy", "difficult", "curious", "beautiful"};
@@ -8,7 +13,24 @@ public class MadLib {
 
   public String create() {
     // TODO: implement this method
+    String random_adjective = randomWordOf(ADJECTIVES);
+    String random_verb = randomWordOf(VERBS);
+    String other_random_verb = randomWordOf(VERBS);
+    String random_famous_person= randomWordOf(FAMOUS_PERSONS);
 
-    return ""; // TODO: this is only here so that the code can be compiled, please replace it with your result
+    String toReturnString = "Java programming is so "
+            +  random_adjective
+            +" ! It makes me so excited all the time because I love to "
+            +  random_verb
+            + ". Stay hydrated and "
+            +  other_random_verb
+            + " like you are "
+            +  random_famous_person
+            + " !";
+    return toReturnString; // TODO: this is only here so that the code can be compiled, please replace it with your result
   }
+  private String randomWordOf (String[] targetArray){
+    return targetArray[(int)Math.floor(Math.random()*targetArray.length)];
+  }
+
 }
