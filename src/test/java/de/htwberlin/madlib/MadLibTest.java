@@ -17,10 +17,11 @@ public class MadLibTest {
     @Test
     @DisplayName("should check the inserted variables")
     public void createTest() {
+
         MadLib p = new MadLib();
-        String expected = "Java programming is so "+ Arrays.toString(ADJECTIVES) +"! It makes me so excited " +
-                "all the time because I love to "+ Arrays.toString(VERBS) +"." +
-                " Stay hydrated and "+ Arrays.toString(VERBS) +" like you are "+ Arrays.toString(FAMOUS_PERSONS) +"!\n";
+        String expected = "Java programming is so "+ ADJECTIVES +"! It makes me so excited " +
+                "all the time because I love to "+ VERBS +"." +
+                " Stay hydrated and "+ VERBS +" like you are "+ FAMOUS_PERSONS +"!\n";
         String actual = p.create();
         assertEquals(expected, actual);
     }
@@ -35,12 +36,4 @@ public class MadLibTest {
         assertTrue(actual != null && actual.contains(expected));
     }
 
-   /* @ParameterizedTest
-    @ValueSource(strings = "Java programming is so")
-    public void createTest3(String ex) {
-        MadLib p = new MadLib();
-        String actual = p.create();
-        assertTrue( actual != null && actual.contains("Java programming is so"));
-
-    }*/
 }
