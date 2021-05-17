@@ -8,7 +8,34 @@ public class MadLib {
 
   public String create() {
     // TODO: implement this method
+    int i =0;
+    int j=0;
+    String ad;
+    String ver;
+    String ver2;
+    String fa;
+    String sen;
 
-    return ""; // TODO: this is only here so that the code can be compiled, please replace it with your result
+    i = (int)( Math.random()* 7 ) ; ad = getADJECTIVES()[i];
+    i = (int)( Math.random()* 8 ) ; ver = getVERBS()[i];
+    j = (int)( Math.random()* 8 ) ; if( i ==j){ j = (int) ( Math.random()* 8 );} ver2 = getVERBS()[j];
+    i = (int)( Math.random()* 8 ) ; fa = getFamousPersons()[i];
+
+    sen = "Java programming is so "+ ad +"! It makes me so excited all the time because I love to "+ ver+"." +
+            " Stay hydrated and "+ver2+" like you are "+fa+"!\n";
+
+    return sen; // TODO: this is only here so that the code can be compiled, please replace it with your result
+  }
+
+  public static String[] getADJECTIVES() {
+    return ADJECTIVES;
+  }
+
+  public static String[] getFamousPersons() {
+    return FAMOUS_PERSONS;
+  }
+
+  public static String[] getVERBS() {
+    return VERBS;
   }
 }
